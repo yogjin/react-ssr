@@ -1,32 +1,37 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-  mode: "development",
-  target: "node",
-  entry: path.resolve(__dirname, "src/server/main.js"),
+  mode: 'development',
+  target: 'node',
+  entry: path.resolve(__dirname, 'src/server/main.js'),
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
   module: {
     rules: [
       {
+        test: /\.(ts|tsx)$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      {
         test: /\.(jsx?)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"],
+            presets: ['@babel/preset-env', '@babel/preset-react'],
           },
         },
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
   output: {
-    filename: "server.js",
-    path: path.resolve(__dirname, "dist/server"),
+    filename: 'server.js',
+    path: path.resolve(__dirname, 'dist/server'),
   },
 };
