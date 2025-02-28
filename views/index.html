@@ -8,20 +8,21 @@
     <link rel="stylesheet" href="../assets/styles/modal.css" />
     <link rel="stylesheet" href="../assets/styles/tab.css" />
     <link rel="stylesheet" href="../assets/styles/thumbnail.css" />
-    <script src="./"></script>
     <title>영화 리뷰</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script type="module" src="/scripts"></script>
   </head>
   <body>
     <div id="wrap">
-      <!--${HEADER_PLACEHOLDER}-->
+      <header id="header">
+        <!--${HEADER_PLACEHOLDER}-->
+      </header>
       <div class="container">
         <main>
           <section>
             <h2>지금 인기 있는 영화</h2>
-            <div id="root">
+            <div id="movie-items">
               <!--${MOVIE_ITEMS_PLACEHOLDER}-->
-              <script type="module" src="./bundle.js"></script>
             </div>
           </section>
         </main>
@@ -33,5 +34,6 @@
       </footer>
     </div>
     <!--${MODAL_AREA}-->
+    <!--${INIT_STATE}-->
   </body>
 </html>

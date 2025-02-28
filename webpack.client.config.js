@@ -9,7 +9,7 @@ module.exports = {
     path: path.resolve('dist/client'),
     filename: 'bundle.js',
     clean: true,
-    publicPath: '/',
+    publicPath: './',
   },
   module: {
     rules: [
@@ -37,6 +37,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './views/index.html',
+      scriptLoading: 'module', // 스크립트 로딩 방식을 모듈로 설정
     }),
     new CopyPlugin({
       patterns: [
